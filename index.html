@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyAw7kt3KAOuyCA1RaZU4_8zYF-0dJQk0n4",
+        authDomain: "itb-js10-24021.firebaseapp.com",
+        projectId: "itb-js10-24021",
+        storageBucket: "itb-js10-24021.appspot.com",
+        messagingSenderId: "343240473568",
+        appId: "1:343240473568:web:04428e30e8a7d841900985"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      let db = firebase.firestore();
+    </script>
+
+    <main>
+      <!-- Header -->
+      <header>
+        <h1>IT Bootcamp chat</h1>
+        <h2>Choose a chatroom</h2>
+      </header>
+
+      <div id="chat_username_section">
+        <!-- Chatroom buttons section -->
+        <nav class="chatroom_buttons_container">
+          <button id="btn_general">#general</button>
+          <button id="btn_js">#js</button>
+          <button id="btn_homeworks">#homeworks</button>
+          <button id="btn_tests">#tests</button>
+        </nav>
+
+        <!-- Username display -->
+        <section id="username_dislay_section">
+          <span id="username_display"></span
+          ><img src="img/logged.png" id="logged_icon" />
+        </section>
+
+        <!-- Chat section -->
+        <section class="chat_container">
+          <ul id="chat_text"></ul>
+          <div id="notification_container">
+            <img src="img/success.svg" id="success_icon" />
+            <div class="text_notification_container">
+              <b id="notification_title"></b>
+              <p id="notification_text"></p>
+            </div>
+            <img src="img/close.svg" id="close_notification_icon" />
+          </div>
+        </section>
+      </div>
+
+      <!-- Input text section -->
+      <section class="input_container">
+        <form id="form_message">
+          <!-- <input type="text" id="input_message" placeholder="Your message..." /> -->
+          <textarea id="input_message" placeholder="Message..."></textarea>
+          <input type="submit" value="Send" id="send_button" />
+        </form>
+
+        <div>
+          <input
+            type="text"
+            id="input_username"
+            placeholder="Update username"
+          />
+          <input type="button" value="Update" id="update_button" />
+        </div>
+
+        <div>
+          <input type="color" id="input_color" value="#FFFFFF" />
+          <input type="button" value="Update Color" id="update_color_button" />
+        </div>
+      </section>
+    </main>
+
+    <!-- JS code -->
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
