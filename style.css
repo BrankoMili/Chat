@@ -91,9 +91,12 @@ h2 {
 }
 
 /* Chat section */
+.chat_container_div {
+  position: relative;
+}
+
 .chat_container {
   margin-top: 1rem;
-  position: relative;
   height: 24rem;
   overflow-y: auto;
 }
@@ -262,10 +265,22 @@ li:hover .bin_icon {
   background-color: var(--second_color);
 }
 
-/* MOBILE - Chatroom buttons section */
-@media only screen and (max-width: 700px) {
+/* MOBILE */
+@media only screen and (max-width: 570px) {
+  html {
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+  }
+
   main {
-    width: 24rem;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    border-radius: 0px;
   }
 
   /* Header */
@@ -279,25 +294,31 @@ li:hover .bin_icon {
 
   /* Chatroom buttons section */
   #chat_username_section {
-    width: 21rem;
-    margin: 0 auto;
+    width: 100%;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+
+  .chatroom_buttons_container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 0.1fr 0.1fr;
+    grid-gap: 0 1rem;
   }
 
   .chatroom_buttons_container button {
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
   }
 
   /* Chat section */
   .chat_container {
     margin-top: 0.5rem;
-    height: 21rem;
+    height: 50vh;
   }
 
   /* Scroll */
   .chat_container::-webkit-scrollbar {
-    width: 5px;
+    width: 4px;
   }
 
   li {
@@ -305,10 +326,21 @@ li:hover .bin_icon {
   }
 
   .li_position_right {
-    margin-left: 7rem;
+    margin-left: auto;
   }
 
   #notification_container {
-    width: 20rem;
+    width: 75%;
+  }
+}
+
+/* TABLET */
+@media only screen and (max-width: 810px) {
+  main {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    border-radius: 0px;
   }
 }
